@@ -5,7 +5,7 @@
 /**
  * Setup the Motor
  */
-Motor::Motor(uint8_t in1, uint8_t in2, uint8_t pwm, uint8_t offset, uint8_t standBy, int iFromMin = 0, int iFromMin = 255, int iToMin = 0, int iToMax = 255)
+Motor::Motor(uint8_t in1, uint8_t in2, uint8_t pwm, uint8_t offset, uint8_t standBy, int iFromMin = 0, int iFromMax = 255, int iToMin = 0, int iToMax = 255)
 {
   motor = TB6612(in1, in2, pwm, offset, standBy);
   fromMin = iFromMin;
