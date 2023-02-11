@@ -26,12 +26,12 @@ void Motor::forward(int speed, int duration)
 
 void Motor::backward(int speed)
 {
-  motor.drive((map(speed, fromMin, fromMax, toMin, toMax)));
+  motor.drive(-(map(speed, fromMin, fromMax, toMin, toMax)));
 }
 
 void Motor::backward(int speed, int duration)
 {
-  motor.drive((map(speed, fromMin, fromMax, toMin, toMax)), duration);
+  motor.drive(-(map(speed, fromMin, fromMax, toMin, toMax)), duration);
 }
 
 void Motor::stop()
