@@ -5,42 +5,42 @@
 /**
  * Setup the Motor
  */
-Motor::Motor(uint8_t iIn1, uint8_t iIn2, uint8_t iPwm, int offset, uint8_t iStandBy, int iFromMin = 0, int iFromMax = 255, int iToMin = 0, int iToMax = 255)
+Motor::Motor(uint8_t iIn1, uint8_t iIn2, uint8_t iPwm, uint8_t iStandBy, int iFromMin = 0, int iFromMax = 255, int iToMin = 0, int iToMax = 255)
 {
-  fromMin = iFromMin;
-  fromMax = iFromMax;
-  toMin = iToMin;
-  toMax = iToMax;
-  in1 = iIn1;
-  in2 = iIn2;
-  pwm = iPwm;
-  standby = iStandBy;
+	fromMin = iFromMin;
+	fromMax = iFromMax;
+	toMin = iToMin;
+	toMax = iToMax;
+	in1 = iIn1;
+	in2 = iIn2;
+	pwm = iPwm;
+	standby = iStandBy;
 }
 
 void Motor::forward(int speed)
 {
-  digitalWrite(in1, HIGH);
-  digitalWrite(in2, LOW);
-  analogWrite(pwm, map(speed, fromMin, fromMax, toMin, toMax));
+	digitalWrite(in1, HIGH);
+	digitalWrite(in2, LOW);
+	analogWrite(pwm, map(speed, fromMin, fromMax, toMin, toMax));
 }
 
 void Motor::backward(int speed)
 {
-  digitalWrite(in1, LOW);
-  digitalWrite(in2, HIGH);
-  analogWrite(pwm, map(speed, fromMin, fromMax, toMin, toMax));
+	digitalWrite(in1, LOW);
+	digitalWrite(in2, HIGH);
+	analogWrite(pwm, map(speed, fromMin, fromMax, toMin, toMax));
 }
 
 void Motor::stop()
 {
-  digitalWrite(in1, LOW);
-  digitalWrite(in2, LOW);
-  analogWrite(pwm, 0);
+	digitalWrite(in1, LOW);
+	digitalWrite(in2, LOW);
+	analogWrite(pwm, 0);
 }
 
 void Motor::brake()
 {
-  digitalWrite(in1, HIGH);
-  digitalWrite(in2, HIGH);
-  analogWrite(pwm, 0);
+	digitalWrite(in1, HIGH);
+	digitalWrite(in2, HIGH);
+	analogWrite(pwm, 0);
 }
