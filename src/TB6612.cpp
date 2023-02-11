@@ -46,9 +46,7 @@ void TB6612::rev(int speed)
 
 void TB6612::brake()
 {
-    digitalWrite(In1, HIGH);
-    digitalWrite(In2, HIGH);
-    analogWrite(PWM, 0);
+    
 }
 
 void TB6612::standby()
