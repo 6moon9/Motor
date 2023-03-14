@@ -6,6 +6,7 @@ class Motor
 {
     public:
         Motor(uint8_t in1, uint8_t in2, uint8_t pwm, uint8_t offset, uint8_t standBy, int iFromMin = 0, int iFromMax = 255, int iToMin = 0, int iToMax = 255);
+        void move(int speed);
         void forward(int speed);
         void forward(int speed, int duration);
         void backward(int speed);

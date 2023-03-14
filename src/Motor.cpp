@@ -14,6 +14,11 @@ Motor::Motor(uint8_t in1, uint8_t in2, uint8_t pwm, uint8_t offset, uint8_t stan
   toMax = iToMax;
 }
 
+void Motor::move(int speed)
+{
+  motor.drive((map(speed, fromMin, fromMax, toMin, toMax)));
+}
+
 void Motor::forward(int speed)
 {
   motor.drive((map(speed, fromMin, fromMax, toMin, toMax)));
